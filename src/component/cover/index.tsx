@@ -16,7 +16,7 @@ export const Cover = () => {
       <div className="cover-text">
         <div className="date">05.17</div>
         <div className="time">SUN PM 12:00</div>
-        <div className="place">시크릿 가든 웨딩</div>
+        <div className="place">시크릿 가든</div>
 
         <div className="names">
           <span>성진</span>

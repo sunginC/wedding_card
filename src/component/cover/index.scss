@@ -1,97 +1,136 @@
+/* 전체 카드 테두리 */
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 14px;   /* 안쪽 여백 */
+
+  border: 1px solid rgba(180,180,180,0.6);
+
+  border-radius: 4px;
+
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* 전체 커버 */
 .cover {
   background-color: var(--light-color);
-        padding: 0rem;
-        border: 1px solid var(--light-grey-color);
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
+  border: 1px solid var(--light-grey-color);
 
-        @media (max-width: 980px) {
-          box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
-          margin: 0.5rem;
-          width: inherit;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 
-          opacity: 0;
-          &.lazy-active {
-            animation-name: lazy-fade-in;
-            animation-duration: 3s;
-            opacity: 1;
-          }
+  position: relative;
 
-          @media print {
-            opacity: 1;
-            animation-name: inherit !important;
-            animation-duration: inherit !important;
-          }
-        }
+  @media (max-width: 980px) {
+    width: 100%;
+    margin: 0.5rem;
 
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+
+    &.lazy-active {
+      animation: lazy-fade-in 3s forwards;
+    }
+  }
 }
-  
-  .image-wrapper {
+
+/* 이미지 영역 */
+.image-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
+
   aspect-ratio: 2 / 3;
+}
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-     transition: opacity 1.2s ease, filter 1.2s ease;
-  }
+/* 이미지 */
+.image-wrapper img {
+  position: absolute;
+  inset: 0;
 
-  .skeleton {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      #e0e0e0 0%,
-      #f5f5f5 50%,
-      #e0e0e0 100%
-    );
-    background-size: 200% 100%;
-    animation: skeleton-loading 1s infinite;
-    z-index: 0;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-   @keyframes skeleton-loading {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
-  }
+/* 하단 페이드 */
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
-  .placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    z-index: 2;
-    transition: opacity 2.5s ease;
-    transition-delay: 2s; 
-    &.fade-out {
-      opacity: 0;
-    }
-  }
+  width: 100%;
+  height: 35%;
 
-  .real-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    filter: blur(10px);
-    z-index: 1;
-     transition: opacity 2s ease, filter 2s ease;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.9) 20%,
+    rgba(255, 255, 255, 0.6) 45%,
+    rgba(255, 255, 255, 0.3) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
 
-    &.show {
-       opacity: 1;
-      filter: blur(0px);
-    }
-  }
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 텍스트 영역 */
+.cover-text {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  text-align: center;
+
+  z-index: 3;
+
+  color: #222;
+  font-family: "Noto Serif KR", serif;
+}
+
+/* 날짜 */
+.cover-text .date {
+  font-size: 2.6rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+/* 시간 */
+.cover-text .time {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+/* 장소 */
+.cover-text .place {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* 이름 */
+.cover-text .names {
+  margin-top: 18px;
+
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+/* 하단 흰 영역 */
+.cover-bottom {
+  width: 100%;
+  height: 120px;   /* 여기 조절하면 여백 크기 바뀜 */
+  background: #fff;
 }

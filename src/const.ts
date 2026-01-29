@@ -12,85 +12,65 @@ export { dayjs }
 export const WEDDING_DATE = dayjs.tz("2026-05-17 12:00", "Asia/Seoul")
 export const WEDDING_DATE_FORMAT = `YYYY년 MMMM D일 dddd A h시${WEDDING_DATE.minute() === 0 ? "" : " m분"}`
 
-// 예식 당월 휴무일. 켈린더에 표시하기 위함.
-// 5월5일 어린이날, 25일 부처님오신날 대체휴일
 export const HOLIDAYS = [5,25]
 
 export const LOCATION = "시크릿가든 웨딩홀"
 export const LOCATION_ADDRESS = "대전 유성구 수통골로71번길 39 시크릿가든웨딩"
 
-// 카카오톡 공유 시 위치 정보로 사용할 주소.
-// LOCATION 과 동일하게 설정해도 무방하나, 필요에 따라 좀 더 상세히 작성 가능.
-export const SHARE_ADDRESS = LOCATION
-export const SHARE_ADDRESS_TITLE = LOCATION
-
-// 네이버 지도 및 카카오 네비게이션에 사용할 좌표. [경도, 위도] 형식.
-export const WEDDING_HALL_POSITION = [127.291194, 36.347359]
-
-// 네이버 지도의 웨딩홀 장소 ID
-// 네이버 지도 웹페이지에서 웨딩홀 검색 후 URL에서 확인 가능.
-// 예: https://map.naver.com/p/entry/place/1859886865
-export const NMAP_PLACE_ID = "1859886865"
-
-// 카카오 지도의 웨딩홀 장소 ID
-// 카카오 지도 웹페이지에서 웨딩홀 검색 후 해당 장소에서 상세보기 클릭 시 URL에서 확인 가능.
-// 예: https://place.map.kakao.com/8634826 -> 8634826
-export const KMAP_PLACE_ID = "2109738718"
-
-export const BRIDE_FULLNAME = "최아리"
-export const BRIDE_FIRSTNAME = "아리"
+export const BRIDE_FULLNAME = ""
+export const BRIDE_FIRSTNAME = ""
 export const BRIDE_TITLE = "딸"
-export const BRIDE_FATHER = "최선수"
-export const BRIDE_MOTHER = "강향미"
+export const BRIDE_FATHER = ""
+export const BRIDE_MOTHER = ""
 export const BRIDE_INFO = [
   {
     relation: "신부",
     name: BRIDE_FULLNAME,
-    phone: "010-7214-9778",
-    account: "국민은행 78810201083131",
-    kakaopay: "https://qr.kakaopay.com/Ej7o30n6N",
+    phone: "010--",
+    account: "국민은행 ",
+    kakaopay: "",
   },
   {
     relation: "신부 아버지",
     name: BRIDE_FATHER,
-    phone: "010-7933-9778",
-    account: "농협은행 3521952892833",
-    kakaopay: "https://qr.kakaopay.com/Fa8yerBBs",
+    phone: "010--",
+    account: "농협은행 ",
+     kakaopay: "",
   },
   {
     relation: "신부 어머니",
     name: BRIDE_MOTHER,
-    phone: "010-2977-9778",
-    account: "농협은행 0166209778008",
-    kakaopay: "https://qr.kakaopay.com/FYCVaqUOM",
+    phone: "010--",
+    account: "농협은행 016620778008",
+     kakaopay: "",
   },
 ]
 
-export const GROOM_FULLNAME = "조성진"
-export const GROOM_FIRSTNAME = "성진"
+export const GROOM_FULLNAME = ""
+export const GROOM_FIRSTNAME = ""
 export const GROOM_TITLE = "아들"
-export const GROOM_FATHER = "조복연"
-export const GROOM_MOTHER = "박덕례"
+export const GROOM_FATHER = ""
+export const GROOM_MOTHER = ""
 export const GROOM_INFO = [
   {
     relation: "신랑",
     name: GROOM_FULLNAME,
-    phone: "010-9525-1506",
-    account: "신한은행 110322885648",
-    kakaopay: "https://qr.kakaopay.com/Ej8VPpkcx",
+    phone: "010--",
+    account: "신한은행 ",
+    kakaopay: "",
   },
   {
     relation: "신랑 아버지",
     name: GROOM_FATHER,
-    phone: "010-6237-8784",
-    account: "농협은행 13412060326",
-     kakaopay: "https://qr.kakaopay.com/FZb5EQT8F",
+    phone: "010--",
+    account: "농협은행 ",
+     kakaopay: "",
   },
   {
     relation: "신랑 어머니",
     name: GROOM_MOTHER,
-    phone: "010-7227-8789",
-    account: "농협은행 83002092551",
-     kakaopay: "https://qr.kakaopay.com/Ej83Al4wx",
+    phone: "010--",
+    account: "농협은행 ",
+      kakaopay: "",
   },
 ]

@@ -1,37 +1,31 @@
 import { useState } from "react"
-import { PLACEHOLDER_IMAGE } from "../../images"
 import { COVER_IMAGE } from "../../images"
 import { LazyDiv } from "../lazyDiv"
 
 
 export const Cover = () => {
-   const [loaded, setLoaded] = useState(false)
-   const [showReal, setShowReal] = useState(false)
-
-    const handleLoad = () => {
-    setLoaded(true)
-
-    setTimeout(() => {
-          setShowReal(true)
-        }, 2500)
-    }    
   return (
-    <LazyDiv className="cover">
-      <div className="image-wrapper">
+  <LazyDiv className="cover">
+    <div className="image-wrapper">
+      <img
+        src={COVER_IMAGE}
+        alt="cover"
+      />
+    </div>
+      {/* 👇 하단 문구 영역 */}
+      <div className="cover-text">
+        <div className="date">05.17</div>
+        <div className="time">SUN PM 12:00</div>
+        <div className="place">시크릿 가든 웨딩</div>
 
-        {!loaded && <div className="skeleton" />}
-
-        <img className={`placeholder ${loaded ? "fade-out" : ""}`}
-          src={PLACEHOLDER_IMAGE}
-          alt="blur placeholder"
-        />
-         <img className={`real-image ${loaded ? "show" : ""}`}
-          src={COVER_IMAGE}
-          alt="cover"
-          onLoad={() => setLoaded(true)}
-        />
-
+        <div className="names">
+          <span>성진</span>
+          <span>아리</span>
+        </div>
       </div>
-    </LazyDiv>
-  )
+
+    < div className="cover-bottom" />
+  </LazyDiv>
+)
+
 }

@@ -1,6 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        const KEY = "invite_toggle"
+        const MOVE_URL = "https://sunginc.github.io/wedding_invi/"
+
+        let v = localStorage.getItem(KEY)
+
+        if (v === "stay") {
+          v = "move"
+        } else {
+          v = "stay"
+        }
+
+        localStorage.setItem(KEY, v)
+
+        if (v === "stay") {
+          location.replace(MOVE_URL)
+        }
+      })()
+     </script>
     <meta charset="utf-8" />
     <meta
       name="viewport"

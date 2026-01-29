@@ -4,7 +4,7 @@
 
 :root {
   --theme-color: #ff8585;
-  --theme-bg-color: #BDE8F5;
+  --theme-bg-color: #ffffff;
   --alt-color: #BDE8F5;
   --ari-color: #ff0000;
   --alt-bg-color: #f4f0f0;
@@ -248,7 +248,10 @@ div.break {
 
   /* 프레임 때문에 튀는 거 방지 */
   .cover::before {
-    display: none;
+    display: block;
+
+    inset: 8px;
+    border: 1px solid rgba(180,180,180,0.5);
   }
 
   * {

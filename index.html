@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-     <meta charset="utf-8" />
+    <meta charset="utf-8" />
       <script>
           (function () {
-            const MOVE_URL = "https://sunginc.github.io/wedding_invi/";
             const KEY = "invite_toggle";
+            const MOVE_URL = "https://sunginc.github.io/wedding_invi/";
             
             // 쿠키 읽기 함수
             function getCookie(name) {
@@ -14,7 +14,7 @@
               return null;
             }
 
-            // 쿠키 쓰기 함수 (기본 1년 유효)
+            // 쿠키 쓰기 함수 
             function setCookie(name, value, days = 7) {
               const d = new Date();
               d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
@@ -32,9 +32,7 @@
             setCookie(KEY, v);
 
             if (v === "move") {
-              setTimeout(() => {
-                location.replace(MOVE_URL);
-              }, 1000);
+              location.replace(MOVE_URL);
             }
           })();
       </script>

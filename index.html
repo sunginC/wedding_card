@@ -22,10 +22,8 @@
             }
 
             let v = getCookie(KEY);
-             if (!v) {
-              setCookie(KEY, "stay");
-              location.replace(MOVE_URL);
-            } else if (v === "stay") {
+
+            if (v === "stay") {
               v = "move";
             } else {
               v = "stay";
@@ -34,7 +32,9 @@
             setCookie(KEY, v);
 
             if (v === "move") {
-              location.replace(MOVE_URL);
+              setTimeout(() => {
+                location.replace(MOVE_URL);
+              }, 1000);
             }
           })();
       </script>

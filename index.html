@@ -23,7 +23,9 @@
 
             // 이전 인덱스 가져오기
             let index = parseInt(getCookie(KEY) || "-1", 10);
-
+            if (isNaN(index)) {
+              index = 0;
+            }
             if (index === -1) {
               index = 0;
             } else {
